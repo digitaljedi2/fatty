@@ -1,20 +1,35 @@
 #!/usr/bin/ruby -w
 #:set ft=ruby
 #:set ts=2
-#
+# Author: Jonathan D. Poole <jpoole@digitaljedi.ca>
+# DatE: 01.26.2016
+
+require_relative('lib/BMI.rb')
 
 puts "Welcome to Fatty"
+puts "----------------"
+
+# Get the users weight in kilograms
 puts "Enter Weight (kg):"
-w = gets.to_i
+# Convert weight to a float
+w = gets.to_f
+
+# Get users height in meters
 puts "Thanks, Height? (meters):"
-h = gets.to_i
+# Convert height to a float
+h = gets.to_f
 
-puts "You entered weight: #{w} and height of #{h}"
+# Initiate object BMI
+bmi = BMI.new(w, h)
 
-bmi = w/h ** 2
-puts "BMI: #{bmi}"
+
+# Calculate and print out users BMI
+puts "You entered weight: #{w} kg and height of #{h} meters"
 puts "Calculating BMI"
-puts "#{bmi} is Underweight" if bmi < 18.5
-puts "#{bmi} is Normal" if bmi > 18.5 && bmi < 24.9
-puts "#{bmi} is overweight" if bmi > 25 && bmi < 29.9
-puts "#{bmi} is obese" if bmi > 30
+
+bmi_point = bmi.calculate(w, h)
+bmi_value = bmi.value(bmi_point)
+
+puts "Your Body Mass Index is #{bmi_point}"
+puts "According to the Department of Health and Human Services/National Institutes of Health"
+puts "Your body mass is classified as: #{bmi_value}"
