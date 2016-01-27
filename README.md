@@ -3,9 +3,10 @@ Fatty:
 A body mass (BMI) calculator application that reads in the user's weight in kilograms
 and height in meters and then calculates their BMI according to the formula
 
-BMI = weight
-      --------------
-      height squared
+`BMI =` 
+      `weight`
+      `--------------`
+      `height squared`
       
 
 The application should also display the following information from the 
