@@ -32,11 +32,16 @@ class BMI
   end
 
   # Convert from pounds to kilograms
+  # I needed this function in order to get my own weight in kilograms
+  
   def to_kg(lbs)
     lbs * 0.453592
   end
 
   # Convert from feet to meters
+  # again I had no clue how tall I was in meters, so I had to convert
+  # from feet to meters
+  
   def to_m(h)
     h * 0.3048
   end
